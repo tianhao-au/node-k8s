@@ -6,7 +6,9 @@
 `$ docker exec -it kubia-container bash`
 
 `$ minikube start`
+`$ minikube --vm-driver=virtualbox start`
 `$ kubectl cluster-info`
+`$ minikube stop`
 
 `$ kubectl run kubia --image=ysihaoy/kubia --port=3030 --generator=run/v1`
 `$ kubectl get pods`
