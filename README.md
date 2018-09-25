@@ -25,3 +25,14 @@
 `$ kubectl describe pod kubia-hczji`
 
 `$ minikube dashboard`
+
+`$ get pod kubia-ftjpx -o yaml`
+`$ kubectl explain pods`
+`$ kubectl explain pod.spec`
+`$ kubectl explain svc`
+
+`$ kubectl create -f kubia-manual.yaml`
+`$ kubectl logs kubia-ftjpx`
+
+`$ kubectl port-forward -h`
+`$ kubectl port-forward kubia-manual 8888:8080`
