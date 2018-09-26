@@ -32,7 +32,30 @@
 `$ kubectl explain svc`
 
 `$ kubectl create -f kubia-manual.yaml`
-`$ kubectl logs kubia-ftjpx`
+`$ kubectl get po kubia-manual -o yaml`
+`$ kubectl logs kubia-manual`
+`$ kubectl logs kubia-manual -c kubia`
 
 `$ kubectl port-forward -h`
 `$ kubectl port-forward kubia-manual 8888:8080`
+
+`$ kubectl get po --show-labels`
+`$ kubectl get po -L creation_method,env`
+`$ kubectl label po kubia-manual creation_method=manual`
+`$ kubectl label po kubia-manual-v2 env=debug --overwrite`
+`$ kubectl get po -l creation_method=manual`
+`$ kubectl get po -l env`
+`$ kubectl get po -l '!env'`
+
+`$ kubectl get ns`
+`$ kubectl get po --namespace kube-system` or
+`$ kubectl get po -n kube-system`
+`$ kubectl create -f custom-namespace.yaml` or
+`$ kubectl create namespace custom-namespace`
+`$ kubectl create -f kubia-manual.yaml -n custom-namespace`
+
+`$ kubectl delete po kubia-manual`
+`$ kubectl delete po -l creation_method=manual`
+`$ kubectl delete ns custom-namespace`
+`$ kubectl delete po --all`
+`$ kubectl delete all --all`
